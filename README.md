@@ -27,10 +27,10 @@ rm -rf .git && git init && npm init
 npm install
 
 # Start development live-reload server
-PORT=8080 npm run dev
+PORT=6000 npm run dev
 
 # Start production server:
-PORT=8080 npm start
+PORT=6000 npm start
 ```
 Docker Support
 ------
@@ -43,7 +43,7 @@ docker build -t es6/api-service .
 #          tag  tag name      Dockerfile location
 
 # run your docker
-docker run -p 8080:8080 es6/api-service
+docker run -p 6000:6000 es6/api-service
 #                 ^            ^
 #          bind the port    container tag
 #          to your host
