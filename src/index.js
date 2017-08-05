@@ -1,7 +1,6 @@
 import http from 'http';
 import express from 'express';
 import expressGraphQL from 'express-graphql'
-import { buildSchema } from 'graphql'
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
@@ -9,15 +8,10 @@ import initializeDb from './db';
 import middleware from './middleware';
 import api from './api';
 import config from './config.json';
+// import schema to be used by GraphQL
+import schema from './schema'
 
 let app = express();
-
-// construct a Schema using the GraphQL schema language
-var userSchema = buildSchema(`
-  type Query {
-    name: String
-  }
-`)
 
 // create a GraphQL resolver function for each API endpoint
 var root = {
@@ -28,7 +22,7 @@ var root = {
 
 // mount GraphQL to 'localhost:8050/graphql' with a schema and the GraphiQL IDE
 app.use('/graphql', expressGraphQL({
-  schema: userSchema,
+  schema: schema,
   rootValue: root,
   graphiql: true
 }))
