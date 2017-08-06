@@ -2,9 +2,11 @@
 
 import { buildSchema } from 'graphql'
 
-export default const schema = buildSchema(`
+const schema = buildSchema(`
   type Query {
     firstName: String,
     lastName: String
   }
 `)
+
+export default schema
