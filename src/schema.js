@@ -8,7 +8,8 @@ const schema = buildSchema(`
   # User schema
   type User {
     id: String
-    name: String
+    firstName: String
+    lastName: String
   }
 
   # Root Query
