@@ -13,7 +13,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "dev": "node src"
+    "dev": "babel-node src --presets es2015,stage-0"
   },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "contributors": [
