@@ -3,5 +3,20 @@
     "express": "^4.15.3",
     "express-graphql": "^0.6.7",
     "graphql": "^0.10.5"
-  }
+  },
+  "name": "eejmc-api",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/SyedAman/eejmc-api.git",
+  "contributors": [
+    {
+      "name": "Syed Aman",
+      "email": "syednashikaman@gmail.com"
+    },
+    {
+      "name": "Mohammed Yaseen",
+      "email": "myy233@nyu.edu"
+    }
+  ],
+  "license": "MIT"
 }
