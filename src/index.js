@@ -4,7 +4,7 @@ import expressGraphQL from 'express-graphql'
 // get schema
 import schema from './schema'
 
-app = express()
+let app = express()
 
 // mount GraphQL to http://localhost:8050/graphql
 app.use('/graphql', expressGraphQL((request, response) => {
