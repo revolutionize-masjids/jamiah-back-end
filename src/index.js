@@ -18,6 +18,7 @@ app.use('/graphql', expressGraphQL({
 
 // run the http server on port 8050
 app.listen(PORT, (error) => {
+  // throw an error if present
   if (error) throw error
 
   console.log(`http server running on http://localhost:${PORT}`)
