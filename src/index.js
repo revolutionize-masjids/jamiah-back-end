@@ -6,6 +6,9 @@ import schema from './schema'
 
 let app = express()
 
+// define port the server will run in
+const PORT = 8050
+
 // mount GraphQL to http://localhost:8050/graphql
 app.use('/graphql', expressGraphQL({
   schema: schema,
@@ -13,8 +16,9 @@ app.use('/graphql', expressGraphQL({
   pretty: true
 }))
 
-app.listen(8050, (error) => {
+// run the http server on port 8050
+app.listen(PORT, (error) => {
   if (error) throw error
 
-  console.log(`http server running on http://localhost:8050`)
+  console.log(`http server running on http://localhost:${PORT}`)
 })
