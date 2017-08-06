@@ -7,6 +7,9 @@
   "name": "eejmc-api",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "dev": "node src"
+  },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "contributors": [
     {
