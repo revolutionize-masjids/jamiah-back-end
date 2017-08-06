@@ -1,5 +1,5 @@
 import express from 'express'
-import expressGraphQL from 'expressGraphQL'
+import expressGraphQL from 'express-graphql'
 
 // get schema
 import schema from './schema'
