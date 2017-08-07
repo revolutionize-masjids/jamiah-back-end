@@ -2,7 +2,7 @@
 // API routes
 //
 
-// use a router to make use of the server instance in different files outside of index.js
+// use a router to make use of the express server instance in different files outside of // index.js for "seperation of concerns"
 import express from 'express'
 const Router = express.Router()
 

@@ -2,6 +2,7 @@
 // entry point for the server
 //
 
+// use express to create the http server
 import express from 'express'
 // use express-graphql to interface with graphql
 import expressGraphQL from 'express-graphql'
