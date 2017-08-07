@@ -2,8 +2,6 @@
 
 import { buildSchema } from 'graphql'
 
-import queries from './queries'
-
 const schema = buildSchema(`
   # User schema
   type User {
