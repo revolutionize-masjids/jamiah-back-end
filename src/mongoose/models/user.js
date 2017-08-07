@@ -1,5 +1,5 @@
 //
-// User model
+// User model definition
 //
 
 // import mongoose and some specific modules

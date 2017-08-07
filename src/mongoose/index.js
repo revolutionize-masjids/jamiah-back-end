@@ -1,3 +1,7 @@
+//
+// Use Mongoose to connect to the MongoDB database
+//
+
 import mongoose from 'mongoose'
 
 // url to connect to database
