@@ -45,3 +45,12 @@ Run the server on your machine
 - MongoDB Compass (will make managing the MongoDB database easier with a GUI)
 - Postman (test API with HTTP requests)
 - Atom (awesome editor that the rest of the team is using)
+
+## Stack
+
+- JavaScript ES8
+- Express.js
+- MongoDB
+- Mongoose
+- GraphQL
+- Firebase
