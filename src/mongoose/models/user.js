@@ -14,6 +14,6 @@ const userSchema = new Schema({
 }, { collection: "user" }) // use this schema in the collection named "user"
 
 // using the user schema, create a model for users
-const userModel = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
 
-export default userModel
+export default User
