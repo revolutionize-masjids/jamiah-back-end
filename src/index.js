@@ -10,7 +10,9 @@ let app = express()
 
 // connect to local MongoDB database using mongoose
 // @NOTE make sure to install MongoDB
-mongoose.connect('mongodb://localhost:27017/local')
+const databasePromise = mongoose.connect('mongodb://localhost:27017/local', {
+  useMongoClient: true
+})
 
 
 // use node environment specified port or default to 8050
