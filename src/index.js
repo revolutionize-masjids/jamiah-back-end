@@ -2,7 +2,7 @@ import express from 'express'
 import expressGraphQL from 'express-graphql'
 
 // get schema since its needed to mount GraphQL
-import schema from './schema'
+import schema from './graphql/schema'
 import fakeDatabase from './fakeDatabase'
 
 let app = express()
