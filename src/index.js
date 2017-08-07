@@ -1,11 +1,17 @@
 import express from 'express'
 import expressGraphQL from 'express-graphql'
+import mongoose from 'mongoose'
 
 // get schema since its needed to mount GraphQL
 import schema from './graphql/schema'
 import fakeDatabase from './fakeDatabase'
 
 let app = express()
+
+// connect to local MongoDB database using mongoose
+// @NOTE make sure to install MongoDB
+mongoose.connect('mongodb://localhost:27017/local')
+
 
 // use node environment specified port or default to 8050
 const PORT = process.env.port || 8050
