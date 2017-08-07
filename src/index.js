@@ -3,30 +3,12 @@ import expressGraphQL from 'express-graphql'
 
 // get schema since its needed to mount GraphQL
 import schema from './schema'
+import fakeDatabase from './fakeDatabase'
 
 let app = express()
 
 // use node environment specified port or default to 8050
 const PORT = process.env.port || 8050
-
-// create a fake database according to defined schemas to test GraphQL
-const fakeDatabase = {
-  'mohammed': {
-    id: 1,
-    firstName: 'Mohammed',
-    lastName: 'Yaseen'
-  },
-  'tomnoy': {
-    id: 2,
-    firstName: 'Lizaful',
-    lastName: 'Tomnoy'
-  },
-  'syed': {
-    id: 3,
-    firstName: 'Syed',
-    lastName: 'Aman'
-  }
-}
 
 // define GraphQL root value
 const rootValue = {
