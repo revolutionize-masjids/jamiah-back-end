@@ -6,7 +6,8 @@ import './mongoose'
 
 // get schema since its needed to mount GraphQL
 import schema from './graphql/schema'
-import fakeDatabase from './fakeDatabase'
+// import hardcoded database
+import fakeDatabase from '.graphql/fakeDatabase'
 
 let app = express()
 
