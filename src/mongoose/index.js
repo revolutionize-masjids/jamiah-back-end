@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 
+import userSchema from './models/user'
+
 // url to connect to database
 const mongoDbRoute = 'mongodb://localhost:27017/local'
 
