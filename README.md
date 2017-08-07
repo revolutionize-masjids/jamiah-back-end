@@ -23,6 +23,7 @@ Make sure you have Node, MongoDB, and Yarn installed
 Make sure you read the documentations on how to install MongoDB. And also make sure you can run the `mongod` command
 
 ```bash
+  # start a mongodb service, normally on http://localhost:27017/
   mongod
 ```
 
@@ -33,6 +34,8 @@ Run the server on your machine
 ```bash
   git clone https://github.com/revolutionize-masjids/eejmc-api.git
   cd eejmc-api
+
+  # install dependencies and run the dev server
   yarn install
   yarn run dev
 ```
