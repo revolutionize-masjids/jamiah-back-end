@@ -7,6 +7,7 @@
   },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-graphql": "^0.6.7",
     "graphql": "^0.10.5",
