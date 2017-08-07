@@ -3,6 +3,7 @@
 //
 
 import express from 'express'
+// use express-graphql to interface with graphql
 import expressGraphQL from 'express-graphql'
 
 // run mongoose scripts to manage MongoDB database
@@ -11,22 +12,15 @@ import './mongoose'
 // import models
 import User from './mongoose/models/user'
 
-// get schema since its needed to mount GraphQL
+// get schema and rootValue since they are needed to mount GraphQL
 import schema from './graphql/schema'
-import fakeDatabase from './graphql/fakeDatabase'
+import rootValue from './graphql/root-value'
 
 // create a variable to represent "the server"
 let app = express()
 
 // use node environment specified port or default to 8050
 const PORT = process.env.port || 8050
-
-// define GraphQL root value
-const rootValue = {
-  user: function ({id}) {
-    return fakeDatabase[id]
-  }
-}
 
 // mount GraphQL to http://localhost:8050/graphql
 app.use('/graphql', expressGraphQL({
