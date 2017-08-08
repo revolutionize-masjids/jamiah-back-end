@@ -3,6 +3,7 @@
 //
 
 import mongoose from 'mongoose'
+import autoIncrement from 'mongoose-auto-increment'
 
 // url to connect to database
 const mongoDbRoute = 'mongodb://localhost:27017/local'
@@ -12,6 +13,8 @@ const mongoDbRoute = 'mongodb://localhost:27017/local'
 const databasePromise = mongoose.connect(mongoDbRoute, {
   useMongoClient: true
 })
+
+autoIncrement.initialize(databasePromise)
 
 // handle database connection errors
 databasePromise.on('error', () => {
