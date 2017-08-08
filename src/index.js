@@ -4,6 +4,8 @@
 
 // use express to create the http server
 import express from 'express'
+// use body-parser to access HTTP request bodies and the data they contain
+import bodyParser from 'body-parser'
 // use express-graphql to interface with graphql
 import expressGraphQL from 'express-graphql'
 
@@ -22,6 +24,10 @@ let app = express()
 
 // use node environment specified port or default to 8050
 const PORT = process.env.port || 8050
+
+// make the api ONLY accept HTTP requests in the form of JSON
+// parse the request's data chunks into a use-able body
+app.use(bodyParser.json({ type: 'application/json' }))
 
 // use the defined API routes
 app.use(apiRoutes)
