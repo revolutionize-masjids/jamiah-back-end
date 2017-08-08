@@ -13,7 +13,6 @@ import User from '../mongoose/models/user'
 Router.post('/users', (request, response) => {
   // create a user using the user model
   const newUser = new User({
-    userId: 1,
     firstName: request.body.firstName,
     lastName: request.body.lastName
   })
