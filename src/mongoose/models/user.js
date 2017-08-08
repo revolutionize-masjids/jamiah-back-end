@@ -12,7 +12,7 @@ const userSchema = new Schema({
   lastName: String
 }, { collection: "user" }) // use this schema in the collection named "user"
 
-// TODO: find a better way to add in a plugin. This is deprecated
+// TODO: find a better way to add in a plugin. This is deprecated. Find better solution, possibly coding it ourselves
 // use the mongoose-auto-increment library to autoincrement userId
 userSchema.plugin(autoIncrement.plugin, 'User')
 
