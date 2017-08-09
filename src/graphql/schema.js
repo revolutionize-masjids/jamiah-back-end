@@ -1,31 +1,45 @@
-// construct database schematic using GraphQL's schema language
+// construct database schematic using GraphQL's shorthand schema notation
+// learn GraphQL shorthand notation : https://wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
 
 import { buildSchema } from 'graphql'
 
-/** GraphQL schema expressed in shorthand notation */
+/** GraphQL schemas expressed in shorthand notation */
 const schema = buildSchema(`
+  # Custom scalar representing urls
+  scalar Url
+
+
+  # Profile avatar
+  type Avatar {
+    imageUrl: Url
+  }
+
+  # Any person
   interface Person {
     id: ID!
     firstName: String
     lastName: String
     is_online: Boolean
+    avatar: Avatar
   }
 
-  # Schema for all users
+  # Normal users
   type User implements Person {
     id: ID!
     firstName: String
     lastName: String
     is_online: Boolean
+    avatar: Avatar
     reputation: Int
   }
 
-  # Schema for moderators
+  # People who like banning
   type Moderator implements Person {
     id: ID!
     firstName: String
     lastName: String
     is_online: Boolean
+    avatar: Avatar
     usersBanned: [User]!
   }
 
