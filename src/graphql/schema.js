@@ -56,6 +56,17 @@ const schema = buildSchema(`
     upvotes: Int
     downvotes: Int
   }
+
+  # A collection of posts
+  interface Thread {
+    title: String
+    description: String
+    originalPoster: User
+    whenCreated: Time
+    is_anonymous: Boolean
+    replies: [Post]!
+  }
+
   # Questions asked to the Imaam
   type ImamQuestion {
     questioner: User
