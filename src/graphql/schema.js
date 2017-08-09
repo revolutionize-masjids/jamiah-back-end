@@ -8,6 +8,9 @@ const schema = buildSchema(`
   # Custom scalar representing urls
   scalar Url
 
+  # Custom scalar representing date & time
+  scalar Time
+
   # Profile avatar
   type Avatar {
     imageUrl: Url
@@ -19,6 +22,7 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     is_online: Boolean
+    lastOnline: Time
     avatar: Avatar
   }
 
@@ -28,6 +32,7 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     is_online: Boolean
+    lastOnline: Time
     avatar: Avatar
     reputation: Int
   }
@@ -38,6 +43,7 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     is_online: Boolean
+    lastOnline: Time
     avatar: Avatar
     usersBanned: [User]!
   }
@@ -54,6 +60,7 @@ const schema = buildSchema(`
     firstName: String
     lastName: String
     is_online: Boolean
+    lastOnline: Time
     avatar: Avatar
     questions: [ImamQuestion]!
   }
