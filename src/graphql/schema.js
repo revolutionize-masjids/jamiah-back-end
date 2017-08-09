@@ -30,8 +30,13 @@ const schema = buildSchema(`
   }
 
   # Root Query
-  type Query {
-    user(id: String): User
+  type Root {
+    me: User
+  }
+
+  # schema configuration
+  schema {
+    query: Root
   }
 `)
 
