@@ -104,6 +104,7 @@ const schema = buildSchema(`
   # Root Query
   type Root {
     me: User
+    allUsers: [User]!
   }
 
   # Schema configuration
