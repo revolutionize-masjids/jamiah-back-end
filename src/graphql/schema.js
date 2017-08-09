@@ -102,14 +102,21 @@ const schema = buildSchema(`
   }
 
   # Root Query
-  type Root {
+  type RootQuery {
     me: User
     allUsers: [User]!
   }
 
+  # Root Mutation
+  type RootMutation {
+    # create a user
+    createUser(firstName: String!): User!
+  }
+
   # Schema configuration
   schema {
-    query: Root
+    query: RootQuery
+    mutation: RootMutation
   }
 `)
 
