@@ -113,11 +113,7 @@ const schema = buildSchema(`
     createUser(firstName: String!): User!
   }
 
-<<<<<<< HEAD
   # Root Subscription: Allow clients to be notified or "subscribe" to an event in the API
-=======
-  # Root Subscription
->>>>>>> e40f93319c1b2af01cf3925a04d07ffb9a4d7c94
   type RootSubscription {
     # subscribe to whenever a new question was asked to the imam
     newImamQuestion: ImamQuestion!
