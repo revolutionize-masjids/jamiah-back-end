@@ -52,7 +52,7 @@ const schema = buildSchema(`
   type Post {
     poster: User
     message: String
-    whenPosted: Time
+    whenSubmitted: Time
     upvotes: Int
     downvotes: Int
   }
@@ -62,14 +62,19 @@ const schema = buildSchema(`
     title: String
     description: String
     originalPoster: User
-    whenCreated: Time
+    whenSubmitted: Time
     is_anonymous: Boolean
     replies: [Post]!
   }
 
   # Questions asked to the Imaam
-  type ImamQuestion {
-    questioner: User
+  type ImamQuestion implements Thread {
+    title: String
+    description: String
+    originalPoster: User
+    whenSubmitted: Time
+    is_anonymous: Boolean
+    replies: [Post]!
     is_answered: Boolean
   }
 
@@ -89,7 +94,7 @@ const schema = buildSchema(`
     me: User
   }
 
-  # schema configuration
+  # Schema configuration
   schema {
     query: Root
   }
