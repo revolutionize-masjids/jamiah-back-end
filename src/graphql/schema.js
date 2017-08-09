@@ -16,7 +16,7 @@ const schema = buildSchema(`
     imageUrl: Url
   }
 
-  # A registered account
+  # Registered account
   interface Account {
     id: ID!
     firstName: String
@@ -26,7 +26,7 @@ const schema = buildSchema(`
     avatar: Avatar
   }
 
-  # Default member/account/user
+  # Default user
   type User implements Account {
     id: ID!
     firstName: String
@@ -35,6 +35,7 @@ const schema = buildSchema(`
     lastOnline: Time
     avatar: Avatar
     reputation: Int
+    bookmarks: [Bookmark]!
   }
 
   # People who like banning
@@ -57,7 +58,7 @@ const schema = buildSchema(`
     downvotes: Int
   }
 
-  # A collection of posts
+  # Collection of posts
   interface Thread {
     title: String
     description: String
@@ -65,9 +66,10 @@ const schema = buildSchema(`
     whenSubmitted: Time
     is_anonymous: Boolean
     replies: [Post]!
+    lastUpdated: Time
   }
 
-  # Questions asked to the Imaam
+  # Question asked to the Imaam
   type ImamQuestion implements Thread {
     title: String
     description: String
@@ -75,6 +77,7 @@ const schema = buildSchema(`
     whenSubmitted: Time
     is_anonymous: Boolean
     replies: [Post]!
+    lastUpdated: Time
     is_answered: Boolean
   }
 
@@ -87,6 +90,14 @@ const schema = buildSchema(`
     lastOnline: Time
     avatar: Avatar
     questions: [ImamQuestion]!
+  }
+
+  # Thread that a user is subscribed to / following
+  type Bookmark {
+    subscribedThread: Thread
+    lastRead: Time
+    # Whether the user who owns the bookmark has read all of thread's updates
+    is_read: Boolean
   }
 
   # Root Query
