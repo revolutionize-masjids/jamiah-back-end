@@ -13,7 +13,7 @@ const schema = buildSchema(`
 
   # Profile avatar
   type Avatar {
-    imageUrl: Url
+    imageUrl: Url!
   }
 
   # Registered account
@@ -21,8 +21,8 @@ const schema = buildSchema(`
     id: ID!
     firstName: String
     lastName: String
-    is_online: Boolean
-    lastOnline: Time
+    is_online: Boolean!!
+    lastOnline: Time!!
     avatar: Avatar
   }
 
@@ -31,8 +31,8 @@ const schema = buildSchema(`
     id: ID!
     firstName: String
     lastName: String
-    is_online: Boolean
-    lastOnline: Time
+    is_online: Boolean!
+    lastOnline: Time!
     avatar: Avatar
     reputation: Int
     bookmarks: [Bookmark]!
@@ -43,27 +43,27 @@ const schema = buildSchema(`
     id: ID!
     firstName: String
     lastName: String
-    is_online: Boolean
-    lastOnline: Time
+    is_online: Boolean!
+    lastOnline: Time!
     avatar: Avatar
     usersBanned: [User]!
   }
 
   # User-submitted message enclosed into a block containing the user's details and the date and time it was submitted contained in Threads
   type Post {
-    poster: User
-    message: String
-    whenSubmitted: Time
-    upvotes: Int
-    downvotes: Int
+    poster: User!
+    message: String!
+    whenSubmitted: Time!
+    upvotes: Int!
+    downvotes: Int!
   }
 
   # Collection of posts
   interface Thread {
     title: String
     description: String
-    originalPoster: User
-    whenSubmitted: Time
+    originalPoster: User!
+    whenSubmitted: Time!
     is_anonymous: Boolean
     replies: [Post]!
     lastUpdated: Time
@@ -73,8 +73,8 @@ const schema = buildSchema(`
   type ImamQuestion implements Thread {
     title: String
     description: String
-    originalPoster: User
-    whenSubmitted: Time
+    originalPoster: User!
+    whenSubmitted: Time!
     is_anonymous: Boolean
     replies: [Post]!
     lastUpdated: Time
@@ -86,18 +86,18 @@ const schema = buildSchema(`
     id: ID!
     firstName: String
     lastName: String
-    is_online: Boolean
-    lastOnline: Time
+    is_online: Boolean!
+    lastOnline: Time!
     avatar: Avatar
     questions: [ImamQuestion]!
   }
 
   # Thread that a user is subscribed to / following
   type Bookmark {
-    subscribedThread: Thread
-    lastRead: Time
+    subscribedThread: Thread!
+    lastRead: Time!
     # Whether the user who owns the bookmark has read all of thread's updates
-    is_read: Boolean
+    is_read: Boolean!
   }
 
   # Root Query
