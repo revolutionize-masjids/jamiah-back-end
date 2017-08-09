@@ -8,7 +8,6 @@ const schema = buildSchema(`
   # Custom scalar representing urls
   scalar Url
 
-
   # Profile avatar
   type Avatar {
     imageUrl: Url
@@ -41,6 +40,22 @@ const schema = buildSchema(`
     is_online: Boolean
     avatar: Avatar
     usersBanned: [User]!
+  }
+
+  # Questions asked to the Imaam
+  type ImamQuestion {
+    questioner: User
+    is_answered: Boolean
+  }
+
+  # The imam of the masjid
+  type Imam implements Person {
+    id: ID!
+    firstName: String
+    lastName: String
+    is_online: Boolean
+    avatar: Avatar
+    questions: [ImamQuestion]!
   }
 
   # Root Query
