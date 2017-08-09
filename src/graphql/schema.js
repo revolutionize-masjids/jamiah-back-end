@@ -24,7 +24,6 @@ const schema = buildSchema(`
     is_online: Boolean!
     lastOnline: Time!
     avatar: Avatar
-    imamQuestions: [ImamQuestion]!
   }
 
   # Default user
