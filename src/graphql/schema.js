@@ -5,7 +5,7 @@ import { buildSchema } from 'graphql'
 const schema = buildSchema(`
   # User schema
   type User {
-    id: String
+    id: ID!
     firstName: String
     lastName: String
   }
