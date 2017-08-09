@@ -16,8 +16,8 @@ const schema = buildSchema(`
     imageUrl: Url
   }
 
-  # Any person
-  interface Person {
+  # A registered account
+  interface Account {
     id: ID!
     firstName: String
     lastName: String
@@ -26,8 +26,8 @@ const schema = buildSchema(`
     avatar: Avatar
   }
 
-  # Normal users
-  type User implements Person {
+  # Default member/account/user
+  type User implements Account {
     id: ID!
     firstName: String
     lastName: String
@@ -38,7 +38,7 @@ const schema = buildSchema(`
   }
 
   # People who like banning
-  type Moderator implements Person {
+  type Moderator implements Account {
     id: ID!
     firstName: String
     lastName: String
@@ -79,7 +79,7 @@ const schema = buildSchema(`
   }
 
   # The imam of the masjid
-  type Imam implements Person {
+  type Imam implements Account {
     id: ID!
     firstName: String
     lastName: String
