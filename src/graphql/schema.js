@@ -113,10 +113,17 @@ const schema = buildSchema(`
     createUser(firstName: String!): User!
   }
 
+  # Root Subscription
+  type RootSubscription {
+    # subscribe to whenever a new question was asked to the imam
+    newImamQuestion: ImamQuestion!
+  }
+
   # Schema configuration
   schema {
     query: RootQuery
     mutation: RootMutation
+    subscription: RootSubscription
   }
 `)
 
