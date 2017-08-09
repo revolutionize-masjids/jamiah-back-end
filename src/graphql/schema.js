@@ -21,8 +21,8 @@ const schema = buildSchema(`
     id: ID!
     firstName: String
     lastName: String
-    is_online: Boolean!!
-    lastOnline: Time!!
+    is_online: Boolean!
+    lastOnline: Time!
     avatar: Avatar
   }
 
