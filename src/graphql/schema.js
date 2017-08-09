@@ -101,22 +101,29 @@ const schema = buildSchema(`
     is_read: Boolean!
   }
 
-  # Root Query
+  # Root Query: Allow clients to read records
   type RootQuery {
     me: User
     allUsers: [User]!
   }
 
-  # Root Mutation
+  # Root Mutation: Allow clients to update or delete records
   type RootMutation {
     # create a user
     createUser(firstName: String!): User!
+  }
+
+  # Root Subscription: Allow clients to be notified or "subscribe" to an event in the API
+  type RootSubscription {
+    # subscribe to whenever a new question was asked to the imam
+    newImamQuestion: ImamQuestion!
   }
 
   # Schema configuration
   schema {
     query: RootQuery
     mutation: RootMutation
+    subscription: RootSubscription
   }
 `)
 
