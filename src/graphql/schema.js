@@ -48,6 +48,14 @@ const schema = buildSchema(`
     usersBanned: [User]!
   }
 
+  # User-submitted message enclosed into a block containing the user's details and the date and time it was submitted contained in Threads
+  type Post {
+    poster: User
+    message: String
+    whenPosted: Time
+    upvotes: Int
+    downvotes: Int
+  }
   # Questions asked to the Imaam
   type ImamQuestion {
     questioner: User
