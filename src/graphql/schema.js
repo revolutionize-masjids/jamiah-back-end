@@ -110,7 +110,11 @@ const schema = buildSchema(`
   # Root Mutation: Allow clients to update or delete records
   type RootMutation {
     # create a user
-    createUser(firstName: String!): User!
+    createUser(firstName: String!, lastName: String!): User!
+    # update a user
+    updateUser(firstName: String!, lastName: String!): User!
+    # delete a user
+    delete(id: ID!): User!
   }
 
   # Root Subscription: Allow clients to be notified or "subscribe" to an event in the API
