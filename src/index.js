@@ -14,7 +14,6 @@ import './mongoose'
 
 // get schema and rootValue since they are needed to mount GraphQL
 import schema from './graphql/schema'
-import rootValue from './graphql/root-value'
 
 // get the defined API routes
 import apiRoutes from './actions/user'
@@ -35,7 +34,6 @@ app.use(apiRoutes)
 // mount GraphQL to http://localhost:8050/graphql
 app.use('/graphql', expressGraphQL({
   schema: schema,
-  rootValue: rootValue,
   graphiql: true,
   pretty: true
 }))
