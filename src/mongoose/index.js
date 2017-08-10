@@ -6,9 +6,9 @@ import mongoose from 'mongoose'
 import autoIncrement from 'mongoose-auto-increment'
 
 // url to connect to database
-const mongoDbRoute = 'mongodb://localhost:27017/local'
+const mongoDbRoute = 'mongodb://localhost:27017/EEJMC'
 
-// connect to local MongoDB database using mongoose
+// connect to EEJMC MongoDB database using mongoose
 // @NOTE make sure to install MongoDB
 const databasePromise = mongoose.connect(mongoDbRoute, {
   useMongoClient: true
