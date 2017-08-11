@@ -13,7 +13,8 @@ import User from '../mongoose/models/user'
 // define a POST route to create users
 Router.post('/users', (request, response) => {
   // validate request
-  assert(request.body.firstName && request.body.lastName, 'invalid request body')
+  assert(request.body.firstName, 'firstName is invalid')
+  assert(request.body.lastName, 'lastName is invalid')
 
   // create a user using the user model
   const newUser = new User({
