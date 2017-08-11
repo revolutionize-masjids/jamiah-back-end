@@ -13,29 +13,58 @@ const schema = buildSchema(`
 
   # Profile avatar
   type Avatar {
+    # the url to the avatar image
     imageUrl: Url!
   }
 
   # Registered account
   interface Account {
+    # unique id
     id: ID!
+
+    # first name of account user
     firstName: String
+
+    # last name of account user
     lastName: String
+
+    # whether the account user is online
     is_online: Boolean!
+
+    # the last time the account user logged in to the app
     lastOnline: Time!
+
+    # the avatar of the user
     avatar: Avatar
   }
 
   # Default user
   type User implements Account {
+    # unique id
     id: ID!
+
+    # first name of account user
     firstName: String
+
+    # last name of account user
     lastName: String
+
+    # whether the account user is online
     is_online: Boolean!
+
+    # the last time the account user logged in to the app
     lastOnline: Time!
+
+    # the avatar of the user
     avatar: Avatar
+
+    # all the questions the user asked to the imam
     imamQuestions: [ImamQuestion]!
+
+    # how much forum reputation this user has
     reputation: Int
+
+    # all the threads this user is subscribed to
     bookmarks: [Bookmark]!
   }
 
