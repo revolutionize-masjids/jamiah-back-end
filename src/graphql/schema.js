@@ -3,6 +3,7 @@
 // wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
 
 import rootMutations from './mutations'
+import rootQueries from './queries'
 
 /** GraphQL schemas expressed in shorthand notation */
 const rootSchema = [`
@@ -131,14 +132,6 @@ const rootSchema = [`
     is_read: Boolean!
   }
 
-  # Root Query: Allow clients to read records
-  type RootQuery {
-    # get current user
-    me: User
-    # get all users
-    allUsers: [User]!
-  }
-
   # Root Subscription: Allow clients to be notified and "subscribe" to an event in the API
   type RootSubscription {
     # subscribe to whenever a new question was asked to the imam
@@ -153,6 +146,7 @@ const rootSchema = [`
   }
 `]
 
-const schema = [...rootSchema, ...rootMutations]
+// combine schemas, queries, mutations, and subscriptions
+const schema = [...rootSchema, ...rootQueries, ...rootMutations]
 
 export default schema
