@@ -14,7 +14,7 @@ const databasePromise = mongoose.connect(mongoDbRoute, {
   useMongoClient: true
 })
 
-// use mongoose-auto-increment in the database
+// use mongoose-auto-increment in the database to auto-increment ids
 autoIncrement.initialize(databasePromise)
 
 // handle database connection errors

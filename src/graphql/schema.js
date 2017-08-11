@@ -109,7 +109,7 @@ const schema = buildSchema(`
     allUsers: [User]!
   }
 
-  # Root Mutation: Allow clients to update and delete records
+  # Root Mutation: Allow clients to create, update, and delete records
   type RootMutation {
     # create a user
     createUser(firstName: String!, lastName: String!): User!
