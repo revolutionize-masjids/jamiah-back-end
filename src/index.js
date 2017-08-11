@@ -13,7 +13,7 @@ import expressGraphQL from 'express-graphql'
 import './mongoose'
 
 // get schema and rootValue since they are needed to mount GraphQL
-import schema from './graphql/schema'
+import schema from './graphql'
 
 // get the defined API routes
 import apiRoutes from './actions/user'
