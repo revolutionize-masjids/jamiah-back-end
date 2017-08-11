@@ -4,6 +4,7 @@
 
 import rootMutations from './mutations'
 import rootQueries from './queries'
+import rootSubscriptions from './subscriptions'
 
 /** GraphQL schemas expressed in shorthand notation */
 const rootSchema = [`
@@ -132,12 +133,6 @@ const rootSchema = [`
     is_read: Boolean!
   }
 
-  # Root Subscription: Allow clients to be notified and "subscribe" to an event in the API
-  type RootSubscription {
-    # subscribe to whenever a new question was asked to the imam
-    newImamQuestion: ImamQuestion!
-  }
-
   # Schema configuration
   schema {
     query: RootQuery
@@ -147,6 +142,7 @@ const rootSchema = [`
 `]
 
 // combine schemas, queries, mutations, and subscriptions
-const schema = [...rootSchema, ...rootQueries, ...rootMutations]
+const schema = [...rootSchema, ...rootQueries, ...rootMutations,
+  ...rootSubscriptions]
 
 export default schema
