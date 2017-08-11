@@ -2,6 +2,8 @@
 // learn GraphQL shorthand notation:
 // wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
 
+import rootMutations from './mutations'
+
 /** GraphQL schemas expressed in shorthand notation */
 const rootSchema = [`
   # Custom scalar representing urls
@@ -137,16 +139,6 @@ const rootSchema = [`
     allUsers: [User]!
   }
 
-  # Root Mutation: Allow clients to create, update, and delete records
-  type RootMutation {
-    # create a user
-    createUser(firstName: String!, lastName: String!): User!
-    # update a user
-    updateUser(id: ID!, is_online: Boolean!): User!
-    # delete a user
-    delete(id: ID!): User!
-  }
-
   # Root Subscription: Allow clients to be notified and "subscribe" to an event in the API
   type RootSubscription {
     # subscribe to whenever a new question was asked to the imam
@@ -161,4 +153,6 @@ const rootSchema = [`
   }
 `]
 
-export default rootSchema
+const schema = [...rootSchema, ...rootMutations]
+
+export default schema
