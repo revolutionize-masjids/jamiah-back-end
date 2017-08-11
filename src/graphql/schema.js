@@ -1,10 +1,9 @@
 // construct database schematic using GraphQL's shorthand schema notation
-// learn GraphQL shorthand notation : https://wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
-
-import { buildSchema } from 'graphql'
+// learn GraphQL shorthand notation:
+// wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
 
 /** GraphQL schemas expressed in shorthand notation */
-const schema = buildSchema(`
+const rootSchema = [`
   # Custom scalar representing urls
   scalar Url
 
@@ -160,6 +159,6 @@ const schema = buildSchema(`
     mutation: RootMutation
     subscription: RootSubscription
   }
-`)
+`]
 
-export default schema
+export default rootSchema
