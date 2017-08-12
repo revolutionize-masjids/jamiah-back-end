@@ -2,10 +2,6 @@
 // learn GraphQL shorthand notation:
 // wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
 
-import rootMutations from './mutations'
-import rootQueries from './queries'
-import rootSubscriptions from './subscriptions'
-
 /** GraphQL schemas expressed in shorthand notation */
 const rootSchema = [`
   # Custom scalar representing urls
@@ -141,8 +137,4 @@ const rootSchema = [`
   }
 `]
 
-// put schema together into one array of schema strings
-const schema = [...rootSchema, ...rootQueries, ...rootMutations,
-  ...rootSubscriptions]
-
-export default schema
+export default rootSchema
