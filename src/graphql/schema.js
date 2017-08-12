@@ -141,7 +141,7 @@ const rootSchema = [`
   }
 `]
 
-// combine schemas, queries, mutations, and subscriptions
+// put schema together into one array of schema strings
 const schema = [...rootSchema, ...rootQueries, ...rootMutations,
   ...rootSubscriptions]
 

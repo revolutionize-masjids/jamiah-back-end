@@ -4,6 +4,7 @@ const rootQueries = [`
   type RootQuery {
     # get current user
     me: User
+
     # get all users
     allUsers: [User]!
   }

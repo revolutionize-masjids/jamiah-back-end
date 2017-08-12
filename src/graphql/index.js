@@ -4,6 +4,7 @@ import rootSchema from './schema'
 import rootResolvers from './resolvers'
 
 // merge all schemas and resolvers together to make a GraphQLSchemaInstance
+// which can be used to mount GraphQL
 const executableSchema = makeExecutableSchema({
   // all created schemas
   typeDefs: rootSchema,
