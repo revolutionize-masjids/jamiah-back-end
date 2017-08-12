@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "dev": "babel-node src --presets es2015 es2016 es2017,stage-0"
+    "dev": "babel-node src --presets es2015 es2016 es2017,stage-0",
+    "start": "babel-node src --presets es2015 es2016 es2017,stage-0"
   },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "dependencies": {
