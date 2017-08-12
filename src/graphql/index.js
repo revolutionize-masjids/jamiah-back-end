@@ -3,10 +3,10 @@ import { makeExecutableSchema } from 'graphql-tools';
 import typeDefs from './typeDefs'
 import rootResolvers from './resolvers'
 
-// merge all schemas and resolvers together to make a GraphQLSchemaInstance
-// which can be used to mount GraphQL
+// merge all type definitions and resolvers together to make a
+// GraphQLSchemaInstance to create the GraphQL service
 const executableSchema = makeExecutableSchema({
-  // all created schemas
+  // all the type definitions
   typeDefs: typeDefs,
   // all created resolvers
   resolvers: rootResolvers,
