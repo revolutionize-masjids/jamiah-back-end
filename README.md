@@ -1,4 +1,4 @@
-# EEJMC API
+# EEJMC Back End
 
 ## How do I run this on my machine?
 
@@ -32,8 +32,8 @@ Make sure you read the documentations on how to install MongoDB. And also make s
 Run the server on your machine
 
 ```bash
-  git clone https://github.com/revolutionize-masjids/eejmc-api.git
-  cd eejmc-api
+  git clone https://github.com/revolutionize-masjids/eejmc-back-end.git
+  cd eejmc-back-end
 
   # install dependencies and run the dev server
   yarn install
@@ -49,8 +49,10 @@ Run the server on your machine
 ## Stack
 
 - JavaScript ES8
+- Node.js
 - Express.js
 - MongoDB
 - Mongoose
 - GraphQL
+- Apollo
 - Firebase
