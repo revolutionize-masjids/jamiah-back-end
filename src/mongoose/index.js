@@ -31,10 +31,6 @@ const initializeMongoDB = async () => {
 
     // use mongoose-auto-increment in the database to auto-increment ids
     autoIncrement.initialize(db)
-
-    // reset the database
-    await db.dropDatabase()
-    console.log('successfully dropped all collections from the database')
   } catch (error) {
     console.log('error', error)
   }
