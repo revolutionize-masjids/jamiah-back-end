@@ -13,7 +13,7 @@ const rootResolvers = {
         return x;
       });
     },
-  }
+  },
 
   RootMutation: {
     // create a user using the User model
