@@ -31,6 +31,8 @@ const rootResolvers = {
       }
     },
   },
-};
+
+  RootSubscription: {}
+}
 
 export default rootResolvers
