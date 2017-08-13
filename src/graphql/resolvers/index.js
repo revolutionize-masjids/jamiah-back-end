@@ -10,11 +10,13 @@ const rootResolvers = {
       })
     },
   };
-  Mutation:{
+  RootMutation:{
     createUser: async (parent, args,{ User }) => {
       const user = await new User(args).save();
         user.id = user.id.toString();
         return user;
     },
   },
-};  
+};
+
+export default rootResolvers
