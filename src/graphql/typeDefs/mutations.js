@@ -2,14 +2,14 @@
 const rootMutations = [`
   # Root Mutation: Allow clients to create, update, and delete records
   type RootMutation {
-    # create a user
-    createUser(firstName: String!, lastName: String!): User!
+    # create an account
+    createAccount(firstName: String!, lastName: String!): Account!
 
-    # update a user
-    updateUser(id: ID!, is_online: Boolean!): User!
+    # update an account
+    updateAccount(id: ID!, is_online: Boolean!): Account!
 
-    # delete a user
-    delete(id: ID!): User!
+    # delete an account
+    delete(id: ID!): Account!
   }
 `]
 
