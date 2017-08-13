@@ -24,15 +24,17 @@ const rootResolvers = {
       try {
         // save the new user to the collection
         const newUser = await new User(args).save()
+
         // stringify the id for MongoDB purposes
         newUser.id = newUser.id.toString()
 
+        // handle success
         console.log(`successfully saved user ${newUser.firstName} to the database collection`)
 
         return newUser
       } catch (error) {
         // handle errors
-        console.log(`failed to save user ${newUser.firstName}`, error)
+        console.log('failed to save user', error)
       }
     }
   },
