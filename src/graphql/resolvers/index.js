@@ -15,6 +15,6 @@ const rootResolvers = {
       const user = await new User(args).save();
         user.id = user.id.toString();
         return user;
-      })
     },
-  };  
+  },
+};  
