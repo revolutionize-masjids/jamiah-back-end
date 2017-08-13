@@ -1,4 +1,7 @@
 // define the resolvers for every query
+import rootMutations from './mutations'
+import rootQueries from './queries'
+
 const rootResolvers = {
   RootQuery:{
     allusers: async (parent, args,{ User }) => {
