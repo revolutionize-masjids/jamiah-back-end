@@ -10,7 +10,7 @@ const userSchema = new Schema({
   userId: { type: Schema.Types.ObjectId },
   firstName: String,
   lastName: String
-}, { collection: "User" }) // use this schema in the collection named "user"
+}, { collection: "user" }) // use this schema in the collection named "user"
 
 // TODO: find a better way to add in a plugin since this is deprecated.
 // Find better solution, possibly coding it ourselves.
