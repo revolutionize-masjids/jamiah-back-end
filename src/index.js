@@ -9,8 +9,8 @@ import expressGraphQL from 'express-graphql'
 // run mongoose scripts to manage MongoDB database
 import './mongoose'
 
-// get schema and rootValue since they are needed to mount GraphQL
-import schema from './graphql'
+// get type defs and rootValue since they are needed to mount GraphQL
+import executableSchema from './graphql'
 
 // get the defined API routes
 import apiRoutes from './actions/user'
@@ -31,7 +31,7 @@ app.use(apiRoutes)
 // use express-graphql to interface with GraphQL and mount GraphQL to
 // http://localhost:8091/graphql
 app.use('/graphql', expressGraphQL({
-  schema: schema,
+  schema: executableSchema,
   graphiql: true,
   pretty: true
 }))

@@ -1,18 +1,23 @@
+//
 // define the resolvers for every query
+//
+
 import User from '../../mongoose/models/user'
 
 const rootResolvers = {
+  // resolvers for all queries
   RootQuery: {
     allUsers: async (parent, args, { User }) => {
       // {id: 11221, name:"blah blah"}
       const users = await User.find()
       return users.map((x) => {
         x.id = x.id.toString()
-        return x;
-      });
-    },
+        return x
+      })
+    }
   },
 
+  // resolvers for all mutaitons
   RootMutation: {
     // create a user using the User model
     createUser: async (parent, {firstName, lastName}, context) => {
@@ -29,9 +34,10 @@ const rootResolvers = {
         // handle errors
         console.log(`failed to save user ${newUser.firstName}`, error)
       }
-    },
+    }
   },
 
+  // resolvers for all subscriptions
   RootSubscription: {}
 }
 
