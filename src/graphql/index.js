@@ -9,7 +9,7 @@ const executableSchema = makeExecutableSchema({
   // all the type definitions
   typeDefs: typeDefs,
   // all created resolvers
-  resolvers: rootResolvers,
+  rootResolvers,
   // print errors to the server console that are usually swallowed by GraphQL
   logger: {
     log: (error) => console.log(error)
