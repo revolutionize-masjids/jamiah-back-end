@@ -8,6 +8,7 @@
   },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-graphql": "^0.6.7",
