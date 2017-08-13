@@ -20,7 +20,7 @@ const rootResolvers = {
   // resolvers for all mutaitons
   RootMutation: {
     // create a user using the User model
-    createUser: async (parent, {firstName, lastName}, context) => {
+    createUser: async (parent, args, context) => {
       try {
         // save the new user to the collection
         const newUser = await new User(args).save()
