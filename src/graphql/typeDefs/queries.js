@@ -7,6 +7,12 @@ const rootQueries = [`
 
     # get all users
     allUsers: [User]!
+
+    # get a user
+    user(
+      # user's first name
+      firstName: String
+    ): User
   }
 `]
 
