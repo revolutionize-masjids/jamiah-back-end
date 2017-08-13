@@ -1,7 +1,5 @@
-import User from '../../mongoose/models/user'
-
 // define the resolvers for every query
-import User from '../mongoose/models/user'
+import User from '../../mongoose/models/user'
 
 const rootResolvers = {
   RootQuery: {
