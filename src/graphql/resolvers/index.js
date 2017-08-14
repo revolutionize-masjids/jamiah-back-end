@@ -68,9 +68,26 @@ const rootResolvers = {
         // handle errors
         console.log('failed to save user', error)
       }
+    },
+    // delete a user using the User model
+    deleteUser: async (parent, id, context) => {
+      try {
+        // stringify the id for MongoDB purposes
+        deleteUser.id = deleteUser.id.toString()
+
+        // delete the user from the collection
+        const deleteUser = await User(id).deleteOne()
+
+        // handle success
+        console.log(`successfully delete user ${deleteUser.id} from the database collection`)
+
+        return deleteUser
+      } catch (error) {
+        // handle errors
+        console.log('failed to delete user', error)
+      }
     }
   },
-
   // resolvers for all subscriptions
   RootSubscription: {}
 }

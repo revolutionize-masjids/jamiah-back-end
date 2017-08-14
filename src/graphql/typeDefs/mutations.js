@@ -9,7 +9,7 @@ const rootMutations = [`
     updateUser(id: ID!, is_online: Boolean!): User!
 
     # delete a user
-    delete(id: ID!): User!
+    deleteUser(id: ID!): User!
   }
 `]
 
