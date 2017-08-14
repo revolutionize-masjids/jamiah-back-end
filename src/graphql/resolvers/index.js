@@ -7,7 +7,7 @@ import User from '../../mongoose/models/user'
 const rootResolvers = {
   // resolvers for all queries
   RootQuery: {
-    allUsers: async (parent, args, { User }) => {
+    allUsers: async (parent, args, context) => {
       // {id: 11221, name:"blah blah"}
       const users = await User.find()
       return users.map((x) => {
