@@ -39,13 +39,7 @@ const rootResolvers = {
     // get all created users
     allUsers: async (parent, args, context) => {
       // do a database query to search the collection for all Users
-      const allUsers = await User.find()
-
-      // stringify ids for MongoDB purposes
-      return allUsers.map((x) => {
-        x.id = x.id.toString()
-        return x
-      })
+      return await User.find()
     }
   },
 
@@ -68,9 +62,23 @@ const rootResolvers = {
         // handle errors
         console.log('failed to save user', error)
       }
+    },
+    // delete a user using the User model
+    deleteUser: async (parent, args, context) => {
+      try {
+        // delete one user that matches params
+        const deletedUser = await User.deleteOne(args)
+
+        // handle success
+        console.log(`successfully deleted a user with id ${args._id}`)
+
+        return deletedUser
+      } catch (error) {
+        // handle errors
+        console.log('failed to delete user', error)
+      }
     }
   },
-
   // resolvers for all subscriptions
   RootSubscription: {}
 }

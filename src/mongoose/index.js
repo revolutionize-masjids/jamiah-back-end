@@ -3,7 +3,6 @@
 //
 
 import mongoose from 'mongoose'
-import autoIncrement from 'mongoose-auto-increment'
 import bluebird from 'bluebird'
 
 mongoose.Promise = bluebird
@@ -28,9 +27,6 @@ const initializeMongoDB = async () => {
     db.once('open', () => {
       console.log(`Successfully connected mongoose to ${MONGODB_URL}`)
     })
-
-    // use mongoose-auto-increment in the database to auto-increment ids
-    autoIncrement.initialize(db)
   } catch (error) {
     console.log('error', error)
   }
