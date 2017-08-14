@@ -7,8 +7,9 @@ import User from '../../mongoose/models/user'
 const rootResolvers = {
   // resolvers for all queries
   RootQuery: {
+    // get all created users
     allUsers: async (parent, args, context) => {
-      // {id: 11221, name:"blah blah"}
+      // do a database query to search the collection for all Users
       const users = await User.find()
 
       // stringify ids for MongoDB purposes
@@ -16,6 +17,14 @@ const rootResolvers = {
         x.id = x.id.toString()
         return x
       })
+    },
+
+    // get a specific user
+    user: async (parent, args, context) => {
+      // search the database for one user that fulfills arguments
+      const user = await User.findOne(args)
+
+      return user
     }
   },
 

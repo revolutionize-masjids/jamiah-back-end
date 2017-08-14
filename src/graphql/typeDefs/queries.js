@@ -9,10 +9,7 @@ const rootQueries = [`
     allUsers: [User]!
 
     # get a user
-    user(
-      # user's first name
-      firstName: String
-    ): User
+    user(firstName: String, lastName: String, id: ID): User
   }
 `]
 
