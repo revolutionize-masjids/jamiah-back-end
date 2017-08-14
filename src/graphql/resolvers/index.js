@@ -39,13 +39,7 @@ const rootResolvers = {
     // get all created users
     allUsers: async (parent, args, context) => {
       // do a database query to search the collection for all Users
-      const allUsers = await User.find()
-
-      // stringify ids for MongoDB purposes
-      return allUsers.map((x) => {
-        x.id = x.id.toString()
-        return x
-      })
+      return await User.find()
     }
   },
 
