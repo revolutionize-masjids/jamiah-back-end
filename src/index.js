@@ -35,5 +35,5 @@ let server = app.listen(PORT, (error) => {
   // handle errors
   if (error) throw error
 
-  console.log(`Running a GraphQL API server on http://localhost:${PORT}`)
+  console.log(`GraphQL API now running on http://localhost:${PORT}/graphql`)
 })
