@@ -9,10 +9,24 @@ const rootResolvers = {
   RootQuery: {
     // get a specific user
     user: async (parent, args, context) => {
-      // search the database for one user that fulfills arguments
-      const user = await User.findOne(args)
+      try {
+        // search the database for one user that fulfills arguments
+        const user = await User.findOne(args)
 
-      return user
+        // handle success
+        console.log(`successfully queried ${user.firstName} ${user.lastName}`)
+
+        return user
+      } catch (error) {
+        // handle errors
+        // try to give first name debugging info if available
+        if (args.firstName) {
+          console.log(`failed to query ${args.firstName}`)
+        }
+
+        console.log('failed to query user')
+      }
+
     },
 
     // get all users that match filter parameters
