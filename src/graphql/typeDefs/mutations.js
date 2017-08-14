@@ -10,7 +10,13 @@ const rootMutations = [`
     ): User!
 
     # update a user
-    updateUser(_id: ID!, is_online: Boolean!): User!
+    updateUser(
+      _id: ID!,
+      is_online: Boolean,
+      firstName: String,
+      lastName: String,
+      reputation: Int
+    ): User!
 
     # delete a user
     deleteUser(_id: ID!): User!
