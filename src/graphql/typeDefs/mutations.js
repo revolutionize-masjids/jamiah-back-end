@@ -6,10 +6,10 @@ const rootMutations = [`
     createUser(firstName: String!, lastName: String!): User!
 
     # update a user
-    updateUser(id: ID!, is_online: Boolean!): User!
+    updateUser(_id: ID!, is_online: Boolean!): User!
 
     # delete a user
-    deleteUser(id: ID!): User!
+    deleteUser(_id: ID!): User!
   }
 `]
 

@@ -19,7 +19,7 @@ const rootSchema = [`
   # Registered account
   interface Account {
     # unique id
-    id: ID!
+    _id: ID!
 
     # first name of account user
     firstName: String
@@ -40,7 +40,7 @@ const rootSchema = [`
   # Default user
   type User implements Account {
     # unique id
-    id: ID!
+    _id: ID!
 
     # first name of account user
     firstName: String
@@ -69,7 +69,7 @@ const rootSchema = [`
 
   # People who like banning
   type Moderator implements Account {
-    id: ID!
+    _id: ID!
     firstName: String
     lastName: String
     is_online: Boolean!
@@ -112,7 +112,7 @@ const rootSchema = [`
 
   # The imam of the masjid
   type Imam implements Account {
-    id: ID!
+    _id: ID!
     firstName: String
     lastName: String
     is_online: Boolean!

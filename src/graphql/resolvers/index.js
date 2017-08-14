@@ -70,18 +70,15 @@ const rootResolvers = {
       }
     },
     // delete a user using the User model
-    deleteUser: async (parent, id, context) => {
+    deleteUser: async (parent, args, context) => {
       try {
-        // stringify the id for MongoDB purposes
-        deleteUser.id = deleteUser.id.toString()
-
-        // delete the user from the collection
-        const deleteUser = await User(id).deleteOne()
+        // delete one user that matches params
+        const deletedUser = await User.deleteOne(args)
 
         // handle success
-        console.log(`successfully delete user ${deleteUser.id} from the database collection`)
+        console.log(`successfully deleted a user with id ${args._id}`)
 
-        return deleteUser
+        return await deletedUser
       } catch (error) {
         // handle errors
         console.log('failed to delete user', error)

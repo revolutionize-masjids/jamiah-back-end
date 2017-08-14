@@ -3,7 +3,7 @@ const rootQueries = [`
   # Root Query: Allow clients to read records
   type RootQuery {
     # get a user
-    user(firstName: String, lastName: String, id: ID): User
+    user(firstName: String, lastName: String, _id: ID): User
 
     # get all users that match filter parameters
     users(firstName: String, lastName: String, is_online: Boolean): [User]
