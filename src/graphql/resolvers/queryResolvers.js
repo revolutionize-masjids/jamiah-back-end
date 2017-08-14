@@ -9,10 +9,23 @@ const queryResolvers = {
   RootQuery: {
     // get a specific user
     user: async (parent, args, context) => {
-      // search the database for one user that fulfills arguments
-      const user = await User.findOne(args)
+      try {
+        // search the database for one user that fulfills arguments
+        const user = await User.findOne(args)
 
-      return user
+        // handle success
+        console.log(`successfully queried ${user.firstName} ${user.lastName}`)
+
+        return user
+      } catch (error) {
+        // handle errors
+        // try to give first name debugging info if available
+        if (args.firstName) {
+          console.log(`failed to query ${args.firstName}`)
+        }
+
+        console.log('failed to query user')
+      }
     },
 
     // get all users that match filter parameters
@@ -26,14 +39,9 @@ const queryResolvers = {
     // get all created users
     allUsers: async (parent, args, context) => {
       // do a database query to search the collection for all Users
-      const users = await User.find()
-
-      // stringify ids for MongoDB purposes
-      return users.map((x) => {
-        x.id = x.id.toString()
-        return x
-      })
+      return await User.find()
     }
+  },
 }
 
 export default queryResolvers
