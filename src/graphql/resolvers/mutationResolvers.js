@@ -7,7 +7,7 @@ import User from '../../mongoose/models/user'
 const mutationResolvers = {
   // resolvers for all mutaitons
   RootMutation: {
-    // create a user using the User model
+    /** create a user using the User model */
     createUser: async (parent, args, context) => {
       try {
         // save the new user to the collection
@@ -23,6 +23,22 @@ const mutationResolvers = {
       } catch (error) {
         // handle errors
         console.log('failed to save user', error)
+      }
+    },
+
+    /** delete a user using the User model */
+    deleteUser: async (parent, args, context) => {
+      try {
+        // delete one user that matches params
+        const deletedUser = await User.deleteOne(args)
+
+        // handle success
+        console.log(`successfully deleted a user with id ${args._id}`)
+
+        return deletedUser
+      } catch (error) {
+        // handle errors
+        console.log('failed to delete user', error)
       }
     }
   }
