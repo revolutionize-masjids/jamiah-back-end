@@ -2,6 +2,8 @@
 // define the resolvers for every query
 //
 
+import User from '../../mongoose/models/user'
+
 const queryResolvers = {
   // resolvers for all queries
   RootQuery: {
