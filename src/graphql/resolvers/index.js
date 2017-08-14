@@ -26,7 +26,6 @@ const rootResolvers = {
 
         console.log('failed to query user')
       }
-
     },
 
     // get all users that match filter parameters
@@ -40,10 +39,10 @@ const rootResolvers = {
     // get all created users
     allUsers: async (parent, args, context) => {
       // do a database query to search the collection for all Users
-      const users = await User.find()
+      const allUsers = await User.find()
 
       // stringify ids for MongoDB purposes
-      return users.map((x) => {
+      return allUsers.map((x) => {
         x.id = x.id.toString()
         return x
       })
