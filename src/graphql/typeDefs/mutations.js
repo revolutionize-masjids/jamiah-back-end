@@ -4,22 +4,24 @@ const rootMutations = [`
   type RootMutation {
     # create a user
     createUser(
-      firstName: String!,
+      firstName: String!
       lastName: String!
+      email: String!
       reputation: Int
     ): User!
 
     # update a user
     updateUser(
-      _id: ID!,
-      is_online: Boolean,
-      firstName: String,
-      lastName: String,
+      _id: ID!
+      is_online: Boolean
+      firstName: String
+      lastName: String
+      email: String
       reputation: Int
     ): User!
 
     # delete a user
-    deleteUser(_id: ID!): User!
+    deleteUser(_id: ID!, email: String): User!
   }
 `]
 

@@ -22,10 +22,13 @@ const rootSchema = [`
     _id: ID!
 
     # first name of account user
-    firstName: String
+    firstName: String!
 
     # last name of account user
-    lastName: String
+    lastName: String!
+
+    # personal email used to login
+    email: String!
 
     # whether the account user is online
     is_online: Boolean!
@@ -43,10 +46,13 @@ const rootSchema = [`
     _id: ID!
 
     # first name of account user
-    firstName: String
+    firstName: String!
 
     # last name of account user
-    lastName: String
+    lastName: String!
+
+    # personal email used to login
+    email: String!
 
     # whether the account user is online
     is_online: Boolean!
@@ -70,8 +76,12 @@ const rootSchema = [`
   # People who like banning
   type Moderator implements Account {
     _id: ID!
-    firstName: String
-    lastName: String
+    firstName: String!
+    lastName: String!
+
+    # personal email used to login
+    email: String!
+
     is_online: Boolean!
     lastOnline: Time!
     avatar: Avatar
@@ -113,8 +123,12 @@ const rootSchema = [`
   # The imam of the masjid
   type Imam implements Account {
     _id: ID!
-    firstName: String
-    lastName: String
+    firstName: String!
+    lastName: String!
+
+    # personal email used to login
+    email: String!
+
     is_online: Boolean!
     lastOnline: Time!
     avatar: Avatar

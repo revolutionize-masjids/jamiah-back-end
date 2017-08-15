@@ -8,6 +8,7 @@ import mongoose, { Schema } from 'mongoose'
 const userSchema = new Schema({
   firstName: String,
   lastName: String,
+  email: String,
   is_online: Boolean,
   reputation: Number
 }, { collection: "user" }) // use this schema in the collection named "user"
