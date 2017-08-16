@@ -24,7 +24,16 @@ app.use(bodyParser.json({ type: 'application/json' }))
 
 // use express-graphql to interface with GraphQL and mount GraphQL to
 // http://localhost:8091/graphql
-app.use('/graphql', expressGraphQL({
+app.use('/graphql', (req, res, next) => {
+  console.log('test')
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+}, expressGraphQL({
   schema: executableSchema,
   graphiql: true,
   pretty: true
