@@ -5,6 +5,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import expressGraphQL from 'express-graphql'
+import cors from 'cors'
 
 // run mongoose scripts to manage MongoDB database
 import './mongoose'
@@ -23,17 +24,8 @@ const PORT = process.env.port || 8091
 app.use(bodyParser.json({ type: 'application/json' }))
 
 // use express-graphql to interface with GraphQL and mount GraphQL to
-// http://localhost:8091/graphql
-app.use('/graphql', (req, res, next) => {
-  console.log('test')
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-}, expressGraphQL({
+// CORS-enabled http://localhost:8091/graphql
+app.use('/graphql', cors(), expressGraphQL({
   schema: executableSchema,
   graphiql: true,
   pretty: true
