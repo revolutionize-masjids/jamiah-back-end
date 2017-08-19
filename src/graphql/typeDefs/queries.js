@@ -3,7 +3,8 @@ const rootQueries = [`
   # Root Query: Allow clients to read records
   type RootQuery {
     # get a user
-    user(_id: ID
+    user(
+      _id: ID
       firstName: String
       lastName: String
       email: String
