@@ -4,7 +4,7 @@
 
 import express from 'express'
 import bodyParser from 'body-parser'
-import { graphqlExpress } from 'apollo-server-express'
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import cors from 'cors'
 
 // run mongoose scripts to manage MongoDB database
@@ -26,9 +26,12 @@ const PORT = process.env.port || 8091
 // bodyParser is only needed for POSTs
 app.use('/graphql', bodyParser.json(), cors(), graphqlExpress({
   schema: executableSchema,
-  graphiql: true,
-  pretty: true
 }))
+
+// mount graphiql
+app.use('/graphiql', graphiqlExpress({
+  endpointURL: '/graphql',
+}));
 
 // run a graphql api http server on port 8091
 let server = app.listen(PORT, (error) => {
