@@ -11,19 +11,11 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true
-<<<<<<< HEAD
   },
   password: {
     type: String,
     required: true
   },
-=======
-  }
-  password: {
-    type: String,
-    required: true
-  }
->>>>>>> f4fe847f7b205a16527c079e0d831988ade5b02e
   is_online: Boolean,
   reputation: Number
 }, { collection: "user" }) // use this schema in the collection named "user"
