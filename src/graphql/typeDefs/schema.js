@@ -30,6 +30,9 @@ const rootSchema = [`
     # personal email used to login
     email: String!
 
+    # password used to login
+    password: String!
+
     # whether the account user is online
     is_online: Boolean!
 
@@ -53,6 +56,9 @@ const rootSchema = [`
 
     # personal email used to login
     email: String!
+
+    # password used to login
+    password: String!
 
     # whether the account user is online
     is_online: Boolean!
@@ -81,6 +87,9 @@ const rootSchema = [`
 
     # personal email used to login
     email: String!
+
+    # password used to login
+    password: String!
 
     is_online: Boolean!
     lastOnline: Time!
@@ -129,6 +138,9 @@ const rootSchema = [`
     # personal email used to login
     email: String!
 
+    # password used to login
+    password: String!
+    
     is_online: Boolean!
     lastOnline: Time!
     avatar: Avatar
