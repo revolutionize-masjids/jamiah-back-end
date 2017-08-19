@@ -4,9 +4,10 @@ const rootMutations = [`
   type RootMutation {
     # create a user
     createUser(
-      firstName: String!
-      lastName: String!
+      firstName: String
+      lastName: String
       email: String!
+      password: String!
       reputation: Int
     ): User!
 
