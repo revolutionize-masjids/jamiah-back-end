@@ -8,7 +8,7 @@ import bluebird from 'bluebird'
 mongoose.Promise = bluebird
 
 // url to connect to database
-const MONGODB_URL = 'mongodb://localhost:27017/EEJMC'
+const MONGODB_URL = 'mongodb://general-user:user123@ds145010.mlab.com:45010/eejmc'
 
 const initializeMongoDB = async () => {
   try {
