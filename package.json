@@ -8,11 +8,11 @@
   },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "dependencies": {
+    "apollo-server-express": "^1.1.0",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
     "express": "^4.15.3",
-    "express-graphql": "^0.6.7",
     "graphql": "^0.10.5",
     "graphql-tools": "^1.1.0",
     "lodash": "^4.17.4",

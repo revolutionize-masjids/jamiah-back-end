@@ -4,7 +4,7 @@
 
 import express from 'express'
 import bodyParser from 'body-parser'
-import expressGraphQL from 'express-graphql'
+import { graphqlExpress } from 'apollo-server-express'
 import cors from 'cors'
 
 // run mongoose scripts to manage MongoDB database
@@ -25,7 +25,7 @@ app.use(bodyParser.json({ type: 'application/json' }))
 
 // use express-graphql to interface with GraphQL and mount GraphQL to
 // CORS-enabled http://localhost:8091/graphql
-app.use('/graphql', cors(), expressGraphQL({
+app.use('/graphql', cors(), graphqlExpress({
   schema: executableSchema,
   graphiql: true,
   pretty: true
