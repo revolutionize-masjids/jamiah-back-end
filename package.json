@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src --presets es2015 es2016 es2017,stage-0",
-    "start": "nodemon --exec babel-node src --presets es2015 es2016 es2017,stage-0"
+    "production": "cross-env NODE_ENV=production nodemon --exec babel-node src --presets es2015 es2016 es2017,stage-0",
+    "prod": "cross-env NODE_ENV=production nodemon --exec babel-node src --presets es2015 es2016 es2017,stage-0",
+    "development": "cross-env NODE_ENV=development nodemon --exec babel-node src --presets es2015 es2016 es2017,stage-0",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src --presets es2015 es2016 es2017,stage-0"
   },
   "repository": "https://github.com/SyedAman/eejmc-api.git",
   "dependencies": {
@@ -25,6 +27,7 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.0.5",
     "nodemon": "^1.11.0"
   },
   "contributors": [

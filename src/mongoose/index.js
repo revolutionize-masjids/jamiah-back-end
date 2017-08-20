@@ -4,30 +4,28 @@
 
 import mongoose from 'mongoose'
 import bluebird from 'bluebird'
+import config from '../config'
 
 mongoose.Promise = bluebird
 
-// url to connect to database
-const MONGODB_URL = 'mongodb://general-user:user123@ds145010.mlab.com:45010/eejmc'
-
 const initializeMongoDB = async () => {
   try {
-    // connect to EEJMC MongoDB database using mongoose. No need to `await` on
-    // this, mongoose 4 handles connection buffering internally
-    const db = mongoose.connect(MONGODB_URL, {
+    // connect to the MongoDB database
+    const db = mongoose.connect(config.database, {
       useMongoClient: true
     })
 
     // handle database connection errors
     db.on('error', () => {
-      console.log(`Failed to connect mongoose to ${MONGODB_URL}`)
+      console.log(`Failed to connect mongoose to ${config.database}`)
     })
 
     // handle successful database connection
     db.once('open', () => {
-      console.log(`Successfully connected mongoose to ${MONGODB_URL}`)
+      console.log(`Successfully connected mongoose to ${config.database}`)
     })
   } catch (error) {
+    // handle general errors
     console.log('error', error)
   }
 }
