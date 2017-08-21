@@ -11,5 +11,8 @@ const config = {
   }
 }
 
+// default to development environment
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
 // use the configuration according to the environment (dev vs. production)
 export default config[process.env.NODE_ENV]
