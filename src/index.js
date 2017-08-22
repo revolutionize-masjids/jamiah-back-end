@@ -9,6 +9,7 @@ import cors from 'cors'
 
 // run mongoose scripts to manage MongoDB database
 import './mongoose'
+import './middleware/auth'
 
 // get type defs and rootValue since they are needed to mount GraphQL
 import executableSchema from './graphql'
