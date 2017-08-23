@@ -35,6 +35,21 @@ passport.use(new FacebookStrategy({
           //if user does not already exist create a new one
           else {
             //create a new user
+            const newUser = new User();
+
+            newUser.firstName = profile.name.givenName;
+            newUser.lastName = profile.name.familyName;
+            newUser.email = profile.emails[0].value;
+            newUser.facebookID = profile.id;
+
+            newUser.save((err, user) => {
+              if (err) {
+                return done(err);
+              }
+              else
+                return done(null, newUser);
+            })
+
         }
       });
   }

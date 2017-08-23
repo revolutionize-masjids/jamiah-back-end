@@ -17,7 +17,7 @@ const userSchema = new Schema({
   },
   is_online: Boolean,
   reputation: Number,
-  facebookId: String
+  facebookID: String
 }, { collection: "user" }) // use this schema in the collection named "user"
 
 // using the user schema, create a model for users
