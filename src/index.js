@@ -6,6 +6,8 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import cors from 'cors'
+import session from 'express-session'
+import passport from 'passport'
 import uuidv4 from 'uuid/v4'
 
 // run mongoose scripts to manage MongoDB database
@@ -23,6 +25,7 @@ let app = express()
 const PORT = process.env.port || 8091
 
 
+
 //create a unique session id for each client
 app.use(session({
  genid: (req) => {
@@ -36,7 +39,7 @@ app.use(passport.session());
 
 //login route for passport
 app.use(bodyParser.urlencoded({ extended: true }) );
-app.post('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
+app.use('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
 
 // use apollo-server-express to interface with GraphQL and mount GraphQL to
 // CORS-enabled http://localhost:8091/graphql
@@ -45,7 +48,7 @@ app.post('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
 // bodyParser is only needed for POSTs
 app.use('/graphql', bodyParser.json(), cors(), graphqlExpress({
   schema: executableSchema,
-  context: { user: request.session.user }
+//  context: { user: request.session.user }
 }))
 
 // mount graphiql
