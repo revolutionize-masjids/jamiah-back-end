@@ -6,7 +6,6 @@ const FACEBOOK_APP_ID = '1857368264592327';
 const FACEBOOK_APP_SECRET = '47b6848783ad87edc30328d2ec1b9359';
 
 
-
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -21,7 +20,7 @@ passport.deserializeUser((id, done) => {
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "eejmc.org",
+    callbackURL: "https://eejmc.org",
     profileFields: ['id', 'emails', 'name']
   },
   (accessToken, refreshToken, profile, done) => {

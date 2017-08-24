@@ -13,6 +13,7 @@ import uuidv4 from 'uuid/v4'
 // run mongoose scripts to manage MongoDB database
 import './mongoose'
 
+// import facebook passport strategy
 import './middleware/auth'
 
 // get type defs and rootValue since they are needed to mount GraphQL
@@ -23,7 +24,6 @@ let app = express()
 
 // use node environment specified port or default to 8091
 const PORT = process.env.port || 8091
-
 
 
 //create a unique session id for each client
