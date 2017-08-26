@@ -181,13 +181,13 @@ const rootSchema = [`
     lastUpdated: String
 
     # the people RSVP'd to the event
-    attendees: [User]!,
+    attendees: [User]
 
     # the people who liked the event
-    likes: [User]!,
+    likes: [User]
 
     # whether the user is subscribed to the event
-    subscribedUsers: [User]!
+    subscribedUsers: [User]
 
     # the people volunteering
     volunteers: [User]
