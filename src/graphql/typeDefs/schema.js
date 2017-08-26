@@ -140,7 +140,7 @@ const rootSchema = [`
 
     # password used to login
     password: String!
-    
+
     is_online: Boolean!
     lastOnline: Time!
     avatar: Avatar
@@ -153,6 +153,38 @@ const rootSchema = [`
     lastRead: Time!
     # Whether the user who owns the bookmark has read all of thread's updates
     is_read: Boolean!
+  }
+
+  # An event hosted by an Islamic organization
+  type Event {
+    _id: ID!,
+
+    # what the event is called
+    name: String!
+
+    # the text describing the event
+    description: String!,
+
+    # when the event begins
+    dateStart: String,
+
+    # when the event ends
+    dateEnd: String,
+
+    # the location the event is being held
+    address: String!,
+
+    # the amount of people RSVP'd to the event
+    attendees: Int!,
+
+    # the amount of people who liked the event
+    likes: Int!,
+
+    # whether the user is subscribed to the event
+    subscribedUsers: [User]!
+
+    # amount of people volunteering
+    volunteers: Int
   }
 
   # Schema configuration
