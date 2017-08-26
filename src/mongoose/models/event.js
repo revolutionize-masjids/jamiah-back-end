@@ -22,6 +22,16 @@ const EventSchema = new Schema({
     type: String,
     required: true
   },
+  created: {
+    type: String,
+    required: true,
+    default: Date.now()
+  },
+  lastUpdated: {
+    type: String,
+    required: false,
+    default: null
+  },
   attendees: {
     type: [UserSchema],
     required: false,

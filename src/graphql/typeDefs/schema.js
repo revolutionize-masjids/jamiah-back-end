@@ -174,6 +174,12 @@ const rootSchema = [`
     # the location the event is being held
     address: String!,
 
+    # when the event was created
+    created: String!
+
+    # when the event was last updated
+    lastUpdated: String
+
     # the people RSVP'd to the event
     attendees: [User]!,
 
