@@ -5,7 +5,7 @@
 import mongoose, { Schema } from 'mongoose'
 
 // describe the properties that will be in every user record
-const userSchema = new Schema({
+const UserSchema = new Schema({
   firstName: String,
   lastName: String,
   email: {
@@ -21,6 +21,9 @@ const userSchema = new Schema({
 }, { collection: "user" }) // use this schema in the collection named "user"
 
 // using the user schema, create a model for users
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', UserSchema)
 
-export default User
+export {
+  User as default,
+  UserSchema
+}
