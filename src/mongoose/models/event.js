@@ -23,9 +23,9 @@ const EventSchema = new Schema({
     required: true
   },
   attendees: {
-    type: Number,
+    type: [UserSchema],
     required: false,
-    default: 0
+    default: []
   },
   likes: {
     type: [UserSchema],
