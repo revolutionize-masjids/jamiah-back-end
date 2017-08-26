@@ -3,6 +3,7 @@
 //
 
 import User from '../../mongoose/models/user'
+import Event from '../../mongoose/models/event'
 
 const mutationResolvers = {
   // resolvers for all mutaitons
@@ -40,7 +41,26 @@ const mutationResolvers = {
         // handle errors
         console.log('failed to delete user', error)
       }
-    }
+    },
+
+    /** create an event using the Event model */
+    createEvent: async (parent, args, context) => {
+      try {
+        // save the new event to the collection
+        const newEvent = await new Event(args).save()
+
+        // stringify the id for MongoDB purposes
+        newEvent.id = newEvent.id.toString()
+
+        // handle success
+        console.log(`successfully saved event ${newEvent.name} to the database collection`)
+
+        return newEvent
+      } catch (error) {
+        // handle errors
+        console.log('failed to save event', error)
+      }
+    },
   }
 }
 
