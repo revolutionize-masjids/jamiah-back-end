@@ -3,6 +3,7 @@
 //
 
 import User from '../../mongoose/models/user'
+import Event from '../../mongoose/models/event'
 
 const queryResolvers = {
   // resolvers for all queries
@@ -40,6 +41,12 @@ const queryResolvers = {
     allUsers: async (parent, args, context) => {
       // do a database query to search the collection for all Users
       return await User.find()
+    },
+
+    // get all created events
+    allEvents: async (parent, args, context) => {
+      // do a database query to search the collection for all Events
+      return await Event.find()
     }
   },
 }
