@@ -30,10 +30,7 @@ const rootMutations = [`
       description: String!,
       dateStart: String,
       dateEnd: String,
-      address: String!,
-      attendees: Int,
-      likes: Int,
-      volunteers: Int
+      address: String!
     ): Event!
   }
 `]
