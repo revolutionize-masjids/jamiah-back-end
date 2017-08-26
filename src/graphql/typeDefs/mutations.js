@@ -23,6 +23,18 @@ const rootMutations = [`
 
     # delete a user
     deleteUser(_id: ID!, email: String): User!
+
+    # create an event
+    createEvent(
+      name: String!
+      description: String!,
+      dateStart: String,
+      dateEnd: String,
+      address: String!,
+      attendees: Int,
+      likes: Int,
+      volunteers: Int
+    ): Event!
   }
 `]
 
