@@ -174,17 +174,17 @@ const rootSchema = [`
     # the location the event is being held
     address: String!,
 
-    # the amount of people RSVP'd to the event
-    attendees: Int!,
+    # the people RSVP'd to the event
+    attendees: [User]!,
 
-    # the amount of people who liked the event
-    likes: Int!,
+    # the people who liked the event
+    likes: [User]!,
 
     # whether the user is subscribed to the event
     subscribedUsers: [User]!
 
-    # amount of people volunteering
-    volunteers: Int
+    # the people volunteering
+    volunteers: [User]
   }
 
   # Schema configuration
