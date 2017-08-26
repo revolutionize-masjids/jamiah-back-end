@@ -20,6 +20,15 @@ const rootQueries = [`
 
     # get every existing user
     allUsers: [User]!
+
+    # get a specific event
+    event(
+      _id: ID
+      name: String
+    ): Event
+
+    # get all the events
+    allEvents: [Event]!
   }
 `]
 
