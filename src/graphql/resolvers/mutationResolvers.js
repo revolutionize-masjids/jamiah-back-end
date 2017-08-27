@@ -64,10 +64,10 @@ const mutationResolvers = {
     },
 
     /** add a comment to an event */
-    addCommentToEvent: async (parent, { _id, body }, context) => {
+    addCommentToEvent: async (parent, { eventId, body }, context) => {
       try {
         // find the event to update
-        const updatedEvent = await Event.findById(_id)
+        const updatedEvent = await Event.findById(eventId)
 
         // create the new event comment using client's parameters
         const newEventComment = await new EventComment({ "body": body}).save()

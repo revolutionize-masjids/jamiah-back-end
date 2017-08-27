@@ -42,7 +42,7 @@ const rootMutations = [`
     # add a comment to an event
     addCommentToEvent(
       # the id of the event being updated
-      _id: ID!
+      eventId: ID!
 
       # the main content of the comment
       body: String!
