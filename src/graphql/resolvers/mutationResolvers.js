@@ -4,6 +4,7 @@
 
 import User from '../../mongoose/models/User'
 import Event from '../../mongoose/models/Event'
+import EventComment from '../../mongoose/models/EventComment'
 
 const mutationResolvers = {
   // resolvers for all mutaitons
@@ -61,6 +62,28 @@ const mutationResolvers = {
         console.log('failed to save event: ', error)
       }
     },
+
+    /** add a comment to an event */
+    addCommentToEvent: async (parent, { _id, body }, context) => {
+      try {
+        // find the event to update
+        const updatedEvent = await Event.findById(_id)
+
+        // create the new event comment using client's parameters
+        const newEventComment = await new EventComment({ "body": body}).save()
+
+        // add the new comment to the array of comments
+        updatedEvent.comments.push(newEventComment)
+        updatedEvent.save()
+
+        // handle success
+        console.log(`successfully added a new comment to event ${updatedEvent.name}`)
+        return updatedEvent
+      } catch (error) {
+        // handle errors
+        console.log('failed to add comment to event: ', error)
+      }
+    }
   }
 }
 

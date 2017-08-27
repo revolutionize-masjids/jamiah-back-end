@@ -15,7 +15,15 @@ const EventCommentSchema = new Schema({
   },
   commentor: {
     type: UserSchema,
-    required:  true
+    required:  true,
+    default: {
+      firstName: "Rameez",
+      lastName: "Arif",
+      email: "rameez.arif@gmail.com",
+      password: "rameezIsCool123",
+      is_online: true,
+      reputation: 523
+    }
   },
   created: {
     type: String,

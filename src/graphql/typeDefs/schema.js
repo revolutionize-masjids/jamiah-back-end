@@ -231,7 +231,7 @@ const rootSchema = [`
     volunteers: [User]
 
     # comments on the event
-    comments: [Comment]
+    comments: [EventComment]
   }
 
   # Schema configuration
