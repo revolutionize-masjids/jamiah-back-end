@@ -78,7 +78,7 @@ const mutationResolvers = {
 
         // handle success
         console.log(`successfully added a new comment to event ${updatedEvent.name}`)
-        return updatedEvent
+        return updatedEvent.comments[updatedEvent.comments.length - 1]
       } catch (error) {
         // handle errors
         console.log('failed to add comment to event: ', error)

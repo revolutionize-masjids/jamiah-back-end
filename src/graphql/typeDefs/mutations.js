@@ -46,7 +46,7 @@ const rootMutations = [`
 
       # the main content of the comment
       body: String!
-    ): Event!
+    ): EventComment!
 
   }
 `]
