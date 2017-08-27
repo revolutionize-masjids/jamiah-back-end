@@ -22,7 +22,13 @@ const rootMutations = [`
     ): User!
 
     # delete a user
-    deleteUser(_id: ID!, email: String): User!
+    deleteUser(
+      # the id of the user to delete
+      _id: ID!,
+
+      # the email of the user to delete
+      email: String
+    ): User!
 
     # create an event
     createEvent(
