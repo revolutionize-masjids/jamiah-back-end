@@ -155,6 +155,44 @@ const rootSchema = [`
     is_read: Boolean!
   }
 
+  interface Comment {
+    # the main content of the comment
+    body: String!
+
+    # the user who made the comment
+    commenter: User
+
+    # when the event was created
+    created: String!
+
+    # when the event was last updated
+    lastUpdated: String
+
+    # the people who liked the event
+    likes: [User]
+  }
+
+  # A comment posted by a user on an event
+  type EventComment implements Comment {
+    # the main content of the comment
+    body: String!
+
+    # the user who made the comment
+    commenter: User
+
+    # when the event was created
+    created: String!
+
+    # when the event was last updated
+    lastUpdated: String
+
+    # the people who liked the event
+    likes: [User]
+
+    # the event this comment was made for
+    event: Event
+  }
+
   # An event hosted by an Islamic organization
   type Event {
     _id: ID!,
@@ -191,6 +229,9 @@ const rootSchema = [`
 
     # the people volunteering
     volunteers: [User]
+
+    # comments on the event
+    comments: [Comment]
   }
 
   # Schema configuration
