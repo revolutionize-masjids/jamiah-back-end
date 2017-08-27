@@ -1,5 +1,5 @@
 //
-// Comment model definition
+// EventComment model definition
 //
 
 import mongoose, { Schema } from 'mongoose'
@@ -8,7 +8,7 @@ import { UserSchema } from './user'
 import { EventSchema } from './event'
 
 // describe the properties that will be in every comment record
-const CommentSchema = new Schema({
+const EventCommentSchema = new Schema({
   body: {
     type: String,
     required: true
@@ -41,9 +41,9 @@ const CommentSchema = new Schema({
 }, { collection: "comment" }) // use this schema in the collection named "comment"
 
 // using the comment schema, create a model for comments
-const Comment = mongoose.model('Comment', CommentSchema)
+const EventComment = mongoose.model('EventComment', EventCommentSchema)
 
 export {
-  Comment as default,
-  CommentSchema
+  EventComment as default,
+  EventCommentSchema
 }

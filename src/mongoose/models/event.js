@@ -5,7 +5,7 @@
 import mongoose, { Schema } from 'mongoose'
 
 import { UserSchema } from './user'
-import { CommentSchema } from './comment'
+import { EventCommentSchema } from './EventComment'
 
 // describe the properties that will be in every event record
 const EventSchema = new Schema({
@@ -54,7 +54,7 @@ const EventSchema = new Schema({
     default: []
   },
   comments: {
-    type: [CommentSchema],
+    type: [EventCommentSchema],
     required: false,
     default: []
   }
