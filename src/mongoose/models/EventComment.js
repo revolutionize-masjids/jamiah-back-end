@@ -13,7 +13,7 @@ const EventCommentSchema = new Schema({
     type: String,
     required: true
   },
-  commentor: {
+  commenter: {
     type: UserSchema,
     required:  true,
     default: {
