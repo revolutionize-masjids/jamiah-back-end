@@ -2,8 +2,8 @@
 // define the resolvers for every mutation
 //
 
-import User from '../../mongoose/models/user'
-import Event from '../../mongoose/models/event'
+import User from '../../mongoose/models/User'
+import Event from '../../mongoose/models/Event'
 
 const mutationResolvers = {
   // resolvers for all mutaitons

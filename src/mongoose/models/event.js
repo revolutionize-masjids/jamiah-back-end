@@ -4,7 +4,7 @@
 
 import mongoose, { Schema } from 'mongoose'
 
-import { UserSchema } from './user'
+import { UserSchema } from './User'
 import { EventCommentSchema } from './EventComment'
 
 // describe the properties that will be in every event record

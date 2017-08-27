@@ -2,8 +2,8 @@
 // define the resolvers for every query
 //
 
-import User from '../../mongoose/models/user'
-import Event from '../../mongoose/models/event'
+import User from '../../mongoose/models/User'
+import Event from '../../mongoose/models/Event'
 
 const queryResolvers = {
   // resolvers for all queries

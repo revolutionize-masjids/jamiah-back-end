@@ -4,8 +4,8 @@
 
 import mongoose, { Schema } from 'mongoose'
 
-import { UserSchema } from './user'
-import { EventSchema } from './event'
+import { UserSchema } from './User'
+import { EventSchema } from './Event'
 
 // describe the properties that will be in every comment record
 const EventCommentSchema = new Schema({
