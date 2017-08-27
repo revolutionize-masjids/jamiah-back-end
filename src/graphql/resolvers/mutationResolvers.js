@@ -23,7 +23,7 @@ const mutationResolvers = {
         return newUser
       } catch (error) {
         // handle errors
-        console.log('failed to save user', error)
+        console.log('failed to save user: ', error)
       }
     },
 
@@ -39,7 +39,7 @@ const mutationResolvers = {
         return deletedUser
       } catch (error) {
         // handle errors
-        console.log('failed to delete user', error)
+        console.log('failed to delete user: ', error)
       }
     },
 
@@ -58,7 +58,7 @@ const mutationResolvers = {
         return newEvent
       } catch (error) {
         // handle errors
-        console.log('failed to save event', error)
+        console.log('failed to save event: ', error)
       }
     },
   }
